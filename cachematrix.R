@@ -1,8 +1,11 @@
 ## The following functions take a matrix as an input, calculate its inverse and cache it globally
 
 
-# This function creates a global environment variable for the inverse for the matrix
-# and sets and gets the matrix and its inverse
+
+
+
+# The makeCacheMatrix function creates a global environment variable for the inverse 
+# for the matrix and sets and gets the matrix and its inverse
 
 
 
@@ -37,8 +40,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-# This function checks to see if there's a cached version of the inverse of the matrix and return it
-# or calculates an inverse if one doesn't yet exist in the cache
+
+# The cacheSolve function checks to see if there's a cached version of the inverse of the matrix 
+# and return it or calculates an inverse if one doesn't yet exist in the cache
 
 cacheSolve <-
   function(x, ...) {
