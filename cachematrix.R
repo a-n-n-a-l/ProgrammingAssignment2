@@ -1,6 +1,4 @@
-## Put comments here that give an overall description of what your
-## functions do
-
+## The following functions take a matrix as an input, calculate its inverse and cache it globally
 
 
 # This function creates a global environment variable for the inverse for the matrix
@@ -47,16 +45,20 @@ cacheSolve <-
     # Return the inverse of the matrix 'x'
     inv <-
       x$getInverse()                      #retrieve the inverse matrix from the passed object
-
+    
     if (!is.null(inv)) {
       #check if there's a matrix already cached
-      message("Getting cached data:")          #alert the user that the matrix that will be returned has already been cached
+      
+      message("Getting cached data:")
+      #alert the user that the matrix that will be returned has already been cached
+      
       return(inv)           #return cached data
     }
-
-    data <- x$get()                      
-    inv <- solve(data, ...)              #calculate the inverse matrix
-    x$setInverse(inv) 
+    
+    data <- x$get()
+    inv <-
+      solve(data, ...)              #calculate the inverse matrix of the passed object
+    x$setInverse(inv)
     
     inv                                   #return the calculated inverse
     
